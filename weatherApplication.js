@@ -3,8 +3,7 @@
 // App indicates whether information about the city.
 // It will indicate temprature of city in both celcius and ferinite
 
-
-
+//class cityInfo Contains cities information
 class CityInfo{
     constructor(city)
     {
@@ -33,8 +32,8 @@ class Info
          let week=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
           document.getElementById("day").innerHTML =week[n]+" , "+d;
      }
-
-     displayValues(cityInfoVal){
+     //display whole information about city and temperature in celcius
+     showInfo(cityInfoVal){
 
         let resultcity=cityInfoVal.city;
         let selectedCity=cityInfoVal.weather.find(v=>{return v.city==resultcity})
@@ -42,6 +41,7 @@ class Info
         document.getElementById("condition").innerHTML=selectedCity['weather']+selectedCity['icon'];
         document.getElementById("temp").innerHTML=selectedCity['temperature'];
     }
+     //display whole information about city and temperature in fahrenheit
     displayFahrenheit(cityInfoVal){
 
         let resultcity=cityInfoVal.city;
@@ -56,12 +56,13 @@ class Info
 
 Info=new Info();
 Info.displayDate();
+Info.displayDate('kolhapur');
 
 //display city details
 document.getElementById("btn").addEventListener("click",function displayDate(e){
     let result=document.getElementById("city").value;
     let cityInfoVal=new CityInfo(result);
-    Info.displayValues(cityInfoVal);
+    Info.showInfo(cityInfoVal);
 })
 
 //display temperature in Fahrenheit
@@ -78,5 +79,5 @@ document.getElementById("button2").addEventListener("click",function displayDate
 document.getElementById("button1").addEventListener("click",function displayDate(e){
     let result=document.getElementById("city").value;
     let cityInfoVal=new CityInfo(result);
-    Info.displayValues(cityInfoVal);
+    Info.showInfo(cityInfoVal);
 })
