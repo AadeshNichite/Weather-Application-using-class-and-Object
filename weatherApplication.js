@@ -39,7 +39,7 @@ class Info
         let selectedCity=cityInfoVal.weather.find(v=>{return v.city==resultcity})
         document.getElementById("state").innerHTML=selectedCity['city']+","+selectedCity['state'];
         document.getElementById("condition").innerHTML=selectedCity['weather']+selectedCity['icon'];
-        document.getElementById("temp").innerHTML=selectedCity['temperature'];
+        document.getElementById("temp").innerHTML=selectedCity['temperature']+"&#8451;";
     }
      //display whole information about city and temperature in fahrenheit
     displayFahrenheit(cityInfoVal){
@@ -48,7 +48,7 @@ class Info
         let selectedCity=cityInfoVal.weather.find(v=>{return v.city==resultcity}); 
         let fahTemp=Math.round((selectedCity.temperature*1.8)+32);
         console.log(fahTemp);
-        document.getElementById("temp").innerHTML=fahTemp;
+        document.getElementById("temp").innerHTML=fahTemp+"&#8457;";
     
     }
   
