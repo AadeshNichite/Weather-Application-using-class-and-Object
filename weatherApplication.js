@@ -24,7 +24,7 @@ class CityInfo{
 class Info
 {
      //display day and date
-     displayDate()
+     DateShow()
      {
          var d=new Date().toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' });
          var newD = new Date();
@@ -49,34 +49,30 @@ class Info
         let fahTemp=Math.round((selectedCity.temperature*1.8)+32);
         console.log(fahTemp);
         document.getElementById("temp").innerHTML=fahTemp+"&#8457;";
-    
-    }
-  
+    } 
 }
 
 Info=new Info();
-Info.displayDate();
-Info.displayDate('kolhapur');
+Info.DateShow();
+Info.DateShow('kolhapur');
 
 //display city details
-document.getElementById("btn").addEventListener("click",function displayDate(e){
+document.getElementById("btn").addEventListener("click",function (){
     let result=document.getElementById("city").value;
     let cityInfoVal=new CityInfo(result);
     Info.showInfo(cityInfoVal);
 })
 
 //display temperature in Fahrenheit
-document.getElementById("button2").addEventListener("click",function displayDate(e){
+document.getElementById("button2").addEventListener("click",function (){
 
     let result=document.getElementById("city").value;
     let cityInfoVal=new CityInfo(result);
-    console.log("Ferinite");
     Info.displayFahrenheit(cityInfoVal);
 })
 
-
 //display temperature in celcius
-document.getElementById("button1").addEventListener("click",function displayDate(e){
+document.getElementById("button1").addEventListener("click",function (){
     let result=document.getElementById("city").value;
     let cityInfoVal=new CityInfo(result);
     Info.showInfo(cityInfoVal);
